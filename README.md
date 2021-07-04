@@ -1,0 +1,1 @@
+# ScholarNurtureWeb, this project basic functions is to allow users who are registered to add to gallery pictures and be able to edit if the upload is not satisfied enough or it can also be deleted too.
