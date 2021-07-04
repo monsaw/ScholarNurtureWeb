@@ -1,0 +1,35 @@
+{% extends 'simple/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="jumbo_spacing">
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-3">
+      {% for list in lists %}
+      <div class="col mb-4">
+        <div class="card">
+          <img src="" alt="">
+
+          <img src="{{list.images.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+           <h5 class="card-title">{{list.owner}}</h5>
+            <p class="card-text">{{list.description|safe}}.</p>
+
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <h1>No Information yet!</h1>
+      {% endfor %}
+    </div>
+    <center>
+      <h3><a href="{% url 'simple:registration' %}">Register</a> or <a  href="{% url 'simple:login' %}">Login</a></h3>
+
+    </center>
+
+
+
+
+{% endblock %}

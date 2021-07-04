@@ -1,0 +1,32 @@
+{% extends 'simple/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="jumbo_spacing">
+
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-5">
+  {% for list in lists %}
+<div class="col mb-4">
+  <div class="card">
+    <img src="{{list.images.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{list.owner}}</h5>
+      <p class="card-text">{{list.description|safe}}.</p>
+      <a class="btn btn-primary"href="{% url 'simple:update' pk=list.pk %}">Edit</a>
+      <a class="btn btn-primary"href="{% url 'simple:delete' pk=list.pk %}">Delete</a>
+    </div>
+  </div>
+</div>
+{% empty %}
+<h1>No Information yet!</h1>
+{% endfor %}
+</div>
+
+
+<a class="btn btn-primary"href="{% url 'simple:create' %}">Add Image</a>
+
+
+{% endblock %}

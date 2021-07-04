@@ -1,0 +1,42 @@
+.navcolor{
+  color:white;
+}
+.list{
+  display: inline-block;
+  margin:20px;
+  color:black;
+  padding-top: 15px;
+}
+h2{
+  margin-right: 140px;
+}
+.index_color{
+  color:blue;
+}
+.jumbo_spacing{
+  margin-top: 10px
+}
+td{
+  margin-right:150px;
+}
+.submit{
+  margin-top: 40px;
+}
+.page{
+  color:red;
+}
+.label{
+  padding-left: 40px;
+
+}
+.labelcolor{
+  color:blue;
+  padding: 10px;
+}
+h6,label,.login{
+  color : blue;
+}
+
+.sides{
+  display:inline-block;
+}

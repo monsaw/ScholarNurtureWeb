@@ -1,0 +1,22 @@
+{% extends 'simple/base.html' %}
+
+{% block content %}
+<center><h2 class="login">Login</h2></center>
+<div class="jumbotron jumbo_spacing">
+  <center>
+
+  <form  method="POST">
+      {% csrf_token %}
+      <label for="Username">Username :</label>
+      <input type="text" name="username" value="Username">
+      <p></p>
+      <label for="Password">Password :</label>
+      <input type="password" name="password" value="Password">
+      <p></p>
+      <input class="btn btn-primary" type="submit" name="" value="Login">
+  </form>
+  </center>
+</div>
+
+
+{% endblock %}

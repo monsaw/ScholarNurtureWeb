@@ -1,0 +1,39 @@
+{% extends 'simple/base.html' %}
+
+{% block content %}
+<center><h2 class="page">REGISTRATION PAGE</h2></center>
+
+    <div class="jumbotron jumbo_spacing">
+      {% if registered %}
+      <center>
+        <h2>You have successfully registered</h2>
+
+        <h5>You can proceed to <a href="{% url 'simple:login' %}">login</a> now</h5>
+      </center>
+      {% else %}
+          <form  method="POST">
+            {% csrf_token %}
+            {% for formone in baseuser %}
+
+              <table>
+                <tr>
+                  <td class="labelcolor">{{formone.label}} : </td>
+                  <td class="label">{{formone}}</td>
+                </tr>
+
+            {% endfor %}
+            {% for formtwo in register %}
+            <tr>
+              <td class="labelcolor">{{formtwo.label}} :  </td>
+              <td class="label">{{formtwo}}</td>
+
+            </tr>
+            {% endfor %}
+              </table>
+                <input class="btn btn-primary submit", type="submit" name="" value="Register">
+            </form>
+            {% endif %}
+
+
+    </div>
+{% endblock %}

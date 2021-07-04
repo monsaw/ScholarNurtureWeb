@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap_css/css/styletwos.css' %}">
+    <script src="{% static 'bootstrap_css/js/jquery.js' %}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap_css/js/mini.js' %}" charset="utf-8"></script>
+    <script src="{% static 'bootstrap_css/js/popper.js' %}" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="{% url 'simple:index' %}"><h2 class="navcolor">SCHOLAR NURTURE</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active navcolor">
+        <a class="nav-link" href="{% url 'simple:home' %}"><h4 class="navcolor">Home</h4><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'simple:about' %}"> <h4 class="navcolor">About US</h4></a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'simple:lists' %}"><h4 class="navcolor">Galleries</h4></a>
+      </li>
+      {% endif %}
+    </ul>
+      <span>
+        <ul>
+          {% if user.is_authenticated %}
+          <li class="list"><h4><a class="navcolor" href="{% url 'simple:logout' %}">Logout</a></h4></li>
+          {% else %}
+          <li class="list"><h4><a class="navcolor" href="{% url 'simple:login' %}">Login</a></h4></li>
+          {% endif %}
+        </ul>
+      </span>
+  </div>
+</nav>
+
+      <div class="container">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+
+  </body>
+</html>

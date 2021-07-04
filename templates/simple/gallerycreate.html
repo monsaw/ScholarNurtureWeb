@@ -1,0 +1,21 @@
+{% extends 'simple/base.html' %}
+
+{% block content %}
+
+<center>
+  <h3>Add to Gallery</h3>
+</center>
+<div class="jumbotron jumbo_spacing">
+  <center>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      {{form.media}}
+
+      <input class="btn btn-primary"type="submit" name="" value="Add">
+    </form>
+
+  </center>
+
+</div>
+{% endblock %}

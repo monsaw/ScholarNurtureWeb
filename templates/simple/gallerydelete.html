@@ -1,0 +1,18 @@
+{% extends 'simple/base.html' %}
+
+{% block content %}
+
+
+<div class="jumbo_spacing">
+  <center>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+    <h3>Are you sure you want to delete {{object}}?</h3>
+      <input class="btn btn-primary"type="submit" name="" value="Yes">
+      <a class="btn btn-primary" href="{% url 'simple:lists' %}">No</a>
+    </form>
+
+  </center>
+
+</div>
+{% endblock %}
